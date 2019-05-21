@@ -2,10 +2,10 @@ bike = read.csv(file = "bike_share.csv", header = TRUE)
 
 View(bike)
 
-x = bike$temp
+x = bike$humidity
 y = bike$count
 
-plot(x, y, ylab = "Number of Bike Rentals in a Given Hourly Period", xlab = "Outdoor Temperature (in Farenheit)", main = "Number of Bike Rentals vs Outdoor Temperature")
+plot(x, y, ylab = "Number of Bike Rentals in a Given Hourly Period", xlab = "Relative Humidity (%)", main = "Number of Bike Rentals vs Relative Humidity")
 
 cor(x, y)
 
@@ -35,7 +35,7 @@ se_y0 = sigma_hat_lse * sqrt(1 + (1/n) + ((x0-mean(x))^2/sxx))
 low_PL = y0_hat - crit_val * se_y0
 upp_PL = y0_hat + crit_val * se_y0
 
-plot(x, y, ylab = "Number of Bike Rentals in a Given Hourly Period", xlab = "Outdoor Temperature (in Farenheit)", main = "Number of Bike Rentals vs Outdoor Temperature")
+plot(x, y, ylab = "Number of Bike Rentals in a Given Hourly Period", xlab = "Relative Humidity (%)", main = "Number of Bike Rentals vs Relative Humidity")
 abline(model, col = "red", lwd = 2) #this is the fitted line
 
 lines(x0, low_CL, col = "blue", lwd = 2, lty = 2)
